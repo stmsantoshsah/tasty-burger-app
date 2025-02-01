@@ -1,13 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import '../../styles/header.scss'
 import { Link } from 'react-router-dom';
 import Logo from "../../assets/logo/logo.png"
 import { Bag } from "react-bootstrap-icons"
 function Header() {
+    const [nav, setNav] = useState(false)
+
+    const changeOnScroll = () => {
+        let scrollVal = document?.documentElement.scrollTop;
+        scrollVal > 100 ? setNav(true) : setNav(false);
+    }
+    window.addEventListener("scroll", changeOnScroll);
     return (
         <header>
-            <Navbar expand="lg">
+            <Navbar expand="lg" className={`${nav === true ? "sticky" : ""}`}>
                 <Container>
                     <Navbar.Brand>
                         <Link to="/" className='logo'><img src={Logo} alt="Logo" className='img-fluid' /></Link>
