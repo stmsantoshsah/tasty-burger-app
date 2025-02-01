@@ -1,0 +1,21 @@
+@use './variables' as *;
+
+@mixin orderNow() {
+    color: $light-black;
+    background-color: $yellow;
+    border-color: $yellow;
+    padding: 15px 38px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-family: $oswald-font;
+    vertical-align: middle;
+    text-transform: uppercase;
+    transition: all .3s ease-in-out;
+}
+
+@mixin btnRed() {
+    color:$white;
+    background-color: $light-red;
+    border-color:$light-red;
+}
